@@ -57,12 +57,16 @@ if has("autocmd")
     \ endif
 
 endif " has("autocmd")
+
+" Disable line numbering in inactive windows. This is convenient
+" for quickly identifying which window is active. 
 augroup BgHighlight
     autocmd!
     autocmd WinEnter * set number
     autocmd WinLeave * set nonumber
 augroup END
 
+" Remap :Q to :qa. Convenient since I often use multiple windows.
 cnoreabbrev Q qa
 
 set cinoptions={.5s,:.5s,+.5s,t0,g0,^-2,e-2,n-2,p2s,(0,=.5s formatoptions=croql cindent shiftwidth=4 tabstop=4
