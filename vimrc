@@ -3,6 +3,12 @@ if v:progname =~? "evim"
   finish
 endif
 
+let mapleader = ","
+
+" Mappings for quickly inserting blank lines and returning to normal mode
+nnoremap <leader>o o<Esc><Up>
+nnoremap <leader>O O<Esc><Down>
+
 set bg=dark
 
 " Use Vim settings, rather then Vi settings (much better!).
