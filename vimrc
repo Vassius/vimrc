@@ -60,7 +60,7 @@ endif " has("autocmd")
 
 " Disable line numbering in inactive windows. This is convenient
 " for quickly identifying which window is active. 
-augroup BgHighlight
+augroup HighlightActive
     autocmd!
     autocmd WinEnter * set number
     autocmd WinLeave * set nonumber
