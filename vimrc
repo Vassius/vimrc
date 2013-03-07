@@ -63,6 +63,23 @@ nnoremap <leader>O O<Esc><Down>
 
 inoremap {<CR> {<CR>}<Up><Esc>o  " Automatically insert matching bracket
 
+let bracketStack = []
+
+function TabMagic()
+    let c = g:bracketStack[-1]
+    let g:bracketStack = g:bracketStack[:-2]
+    normal f]<Right>
+    if len(g:bracketStack) == 0
+        iunmap <Tab>
+    endif
+endfunction
+
+function PushBracket(c) 
+    call add(g:bracketStack, a:c)
+    inoremap <Tab> <Esc>:call TabMagic()<CR>a
+endfunction
+
+inoremap [ []<Left><Esc>:call PushBracket("]")<CR>a
 
 """"""""""""""""
 " Autocommands "
