@@ -57,6 +57,13 @@ nnoremap <leader>o o<Esc><Up>
 nnoremap <leader>O O<Esc><Down>
 
 
+""""""""""""""""""""""""
+" Insert mode mappings "
+""""""""""""""""""""""""
+
+inoremap {<CR> {<CR>}<Up><Esc>o  " Automatically insert matching bracket
+
+
 """"""""""""""""
 " Autocommands "
 """"""""""""""""
