@@ -5,11 +5,10 @@ endif
 
 let mapleader = ","
 
-" Mappings for quickly inserting blank lines and returning to normal mode
-nnoremap <leader>o o<Esc><Up>
-nnoremap <leader>O O<Esc><Down>
 
-set bg=dark
+"""""""""""
+" Options "
+"""""""""""
 
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -19,6 +18,7 @@ set nocompatible
 " This is to encourage 'proper' commands for joining lines and such.
 set backspace=start
 
+set bg=dark
 set autoindent		" always set autoindenting on
 set expandtab
 set nobackup
@@ -27,6 +27,12 @@ set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 set number
+set cinoptions={.5s,:.5s,+.5s,t0,g0,^-2,e-2,n-2,p2s,(0,=.5s formatoptions=croql cindent shiftwidth=4 tabstop=4
+
+
+""""""""""""""""""""
+" General mappings "
+""""""""""""""""""""
 
 map Q gq
 
@@ -41,6 +47,19 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+
+""""""""""""""""""""""""
+" Normal mode mappings "
+""""""""""""""""""""""""
+
+" Mappings for quickly inserting blank lines and returning to normal mode
+nnoremap <leader>o o<Esc><Up>
+nnoremap <leader>O O<Esc><Down>
+
+
+""""""""""""""""
+" Autocommands "
+""""""""""""""""
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -75,5 +94,4 @@ augroup END
 " Remap :Q to :qa. Convenient since I often use multiple windows.
 cnoreabbrev Q qa
 
-set cinoptions={.5s,:.5s,+.5s,t0,g0,^-2,e-2,n-2,p2s,(0,=.5s formatoptions=croql cindent shiftwidth=4 tabstop=4
 
