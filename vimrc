@@ -68,7 +68,8 @@ let bracketStack = []
 function TabMagic()
     let c = g:bracketStack[-1]
     let g:bracketStack = g:bracketStack[:-2]
-    normal f]<Right>
+    let exec_string = "normal f" . c . "<Right>"
+    execute exec_string
     if len(g:bracketStack) == 0
         iunmap <Tab>
     endif
@@ -80,6 +81,9 @@ function PushBracket(c)
 endfunction
 
 inoremap [ []<Left><Esc>:call PushBracket("]")<CR>a
+inoremap ' ''<Left><Esc>:call PushBracket("'")<CR>a
+inoremap ( ()<Left><Esc>:call PushBracket(")")<CR>a
+inoremap { {}<Left><Esc>:call PushBracket("}")<CR>a
 
 """"""""""""""""
 " Autocommands "
