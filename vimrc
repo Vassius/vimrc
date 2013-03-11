@@ -61,7 +61,8 @@ nnoremap <leader>O O<Esc><Down>
 " Insert mode mappings "
 """"""""""""""""""""""""
 
-inoremap {<CR> {<CR>}<Up><Esc>o  " Automatically insert matching bracket
+" Automatically insert matching bracket
+inoremap {<CR> {<CR>}<Up><Esc>o  
 
 let bracketStack = []
 
