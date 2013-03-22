@@ -56,6 +56,11 @@ endif
 nnoremap <leader>o o<Esc><Up>
 nnoremap <leader>O O<Esc><Down>
 
+" Clear line and stay in normal mode
+nnoremap <leader>s S<Esc>
+
+" Clear line from cursor to end and stay in normal mode
+nnoremap <leader>c C<Esc>
 
 """"""""""""""""""""""""
 " Insert mode mappings "
